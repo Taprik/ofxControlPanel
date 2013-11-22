@@ -152,7 +152,7 @@ void guiTypeButtonSlider::setValue(float _value, int whichParam) {
 
 //-----------------------------------------------
 void guiTypeButtonSlider::updateValue() {
-
+	value.setValue(slider->value.getValueF());	//
 	//CB
 }
 
@@ -164,7 +164,7 @@ void guiTypeButtonSlider::update(){
 
 	slider->setPosition(boundingBox.x + 15, boundingBox.y );
 	leftButton->setPosition(boundingBox.x,boundingBox.y + slider->displayText.getTextHeight() + leftButton->titleSpacing);
-	rightButton->setPosition(boundingBox.x + boundingBox.width - rightButton->getWidth(),boundingBox.y + slider->displayText.getTextHeight() + leftButton->titleSpacing);
+	rightButton->setPosition(boundingBox.x + boundingBox.width - rightButton->hitArea.getWidth(),boundingBox.y + slider->displayText.getTextHeight() + leftButton->titleSpacing);
 
 	slider->update();
 	leftButton->update();
